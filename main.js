@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.post("/gl", (req, res)=> {
-    console.log(req.body)
+    console.log(req)
     res.sendStatus(200)
 })
 
