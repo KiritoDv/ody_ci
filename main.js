@@ -2,7 +2,11 @@ const express = require("express");
 const app = express();
 
 app.post("/gl", (req, res)=> {
-    console.log(req.body)
+    console.log("POST: "+req.body)
+})
+
+app.get("/gli", (req, res)=> {
+    console.log("GET: "+req.body)
 })
 
 app.get("/", (req, res) => {
