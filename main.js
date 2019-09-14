@@ -2,15 +2,11 @@ const express = require("express");
 const app = express();
 
 app.post("/gl", (req, res)=> {
-    console.log("POST: "+req.body)
-})
-
-app.get("/gli", (req, res)=> {
-    console.log("GET: "+req.body)
+    res.sendStatus(200)
 })
 
 app.get("/", (req, res) => {
-    res.send("awa");
+    res.send("Go fuck u r self");
 })
 
-app.listen(9991);
+app.listen(3452);
