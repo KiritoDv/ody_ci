@@ -54,7 +54,9 @@ class Mirror{
     }
 
     handlePush(json){
-        if(gh(json.repository.git_http_url).name == this.repo){
+        var name = json.repository.git_http_url ? gh(json.repository.git_http_url).name : gh(json.repository.clone_url).name;
+
+        if(name && name == this.repo){
             console.log(`[Mirror] Detected changes on: ${this.repo}`);
             console.log(`[Mirror] Pushing to mirror`);
             this.cmdExec(['-C', this.path, 'fetch', 'origin', this.branch]).then(() => {
