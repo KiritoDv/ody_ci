@@ -41,6 +41,15 @@ class Mirror{
                     });
                 });
             });
+
+            /* TODO: Add auto branch detection
+
+                this.altExec(['-C', this.path, 'branch', '-a']).then((res) => {
+                    var branches = [...new Set(res.toString().replace(/\n/g, '').trim().split(" ").filter(a => a != '').filter(a => a != '->').filter(a => !a.includes("mirror")).filter(a => !a.includes("HEAD")))];
+
+                    console.log(branches)
+                })
+            */;
         }
     }
 
@@ -81,6 +90,28 @@ class Mirror{
         });
     }
 
+    altExec(args){
+        return new Promise((resolve) => {
+
+            const ls = spawn('git', args);
+
+            ls.stdout.on('data', (data) => {
+                if(data != ""){
+                    resolve(data);
+                }
+            });
+
+            ls.stderr.on('data', (data) => {
+                if(data != ""){
+                    resolve(data);
+                }
+            });
+
+            ls.on('close', (code) => {
+                resolve(null);
+            });
+        });
+    }
 }
 
 module.exports = Mirror;

@@ -1,7 +1,14 @@
 {
-    "mirrors": [{
-        "repo": "ssh://git@luckyintelligence.com/kiritodev/test.git",
-        "mirror": "https://github.com/KiritoDv/test.git",
-        "branch": "test-branch"
-    }]
+    "mirrors": [
+        {
+            "repo": "ssh://git@luckyintelligence.com/kiritodev/test.git",
+            "mirror": "https://github.com/KiritoDv/test.git",
+            "branch": "test-branch"
+        },
+        {
+            "repo": "ssh://git@luckyintelligence.com/kiritodev/test.git",
+            "mirror": "https://github.com/KiritoDv/test.git",
+            "branch": "master"
+        }
+    ]
 }
