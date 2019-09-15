@@ -10,7 +10,7 @@ class GitMirror{
 
     initMirror(r){
         return new Promise((resolve) => {
-            var repo = new Mirror(r.repo, r.mirror);
+            var repo = new Mirror(r.repo, r.mirror, r.branch ? r.branch : "master");
             this.mirrors.push(repo)
             repo.initRepo();
 
@@ -20,7 +20,7 @@ class GitMirror{
 
     loadMirrors(){
         config.mirrors.forEach(r => {
-            var repo = new Mirror(r.repo, r.mirror);
+            var repo = new Mirror(r.repo, r.mirror, r.branch ? r.branch : "master");
             this.mirrors.push(repo)
             repo.initRepo();
         });
