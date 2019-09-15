@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("bodyParser");
+const bodyParser = require("body-parser");
+const Main = require('../main')
 
 app.use(bodyParser.json());
 
 app.post("/gl", (req, res)=> {
-    console.log(req)
+    Main.mirror.handleHook(req.body);
     res.sendStatus(200)
 })
 
@@ -14,3 +15,5 @@ app.get("/", (req, res) => {
 })
 
 app.listen(3452);
+
+module.exports = app;

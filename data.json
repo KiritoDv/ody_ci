@@ -1,0 +1,6 @@
+{
+    "mirrors": [{
+        "repo": "http://gitlab.pixelclient.net/kiritodev/test.git",
+        "mirror": "https://github.com/KiritoDv/test.git"
+    }]
+}
