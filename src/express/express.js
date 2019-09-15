@@ -6,7 +6,6 @@ const Main = require('../main')
 app.use(bodyParser.json());
 
 app.post("/gl", (req, res)=> {
-    console.log(req.body)
     Main.mirror.handleHook(req.body);
     res.sendStatus(200)
 })
