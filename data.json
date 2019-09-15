@@ -1,6 +1,6 @@
 {
     "mirrors": [{
-        "repo": "http://gitlab.pixelclient.net/kiritodev/test.git",
+        "repo": "ssh://git@luckyintelligence.com/kiritodev/test.git",
         "mirror": "https://github.com/KiritoDv/test.git"
     }]
 }
